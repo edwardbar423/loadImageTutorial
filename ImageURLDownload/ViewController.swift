@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textBox: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func openURL(_ sender: AnyObject) {
+        let path = textBox.text!
+        let url = NSURL(string: path)
+        let data = NSData(contentsOf: url as! URL)
+        let img = UIImage(data: data as! Data)
+        imageView.image = img
+    }
 
 }
 

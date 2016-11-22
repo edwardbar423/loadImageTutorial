@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageURLDownload" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpb-O4-btz">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW1-Oq-ifZ">
+                                <state key="normal" title="Open URL"/>
+                                <connections>
+                                    <action selector="openURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uii-Qs-e7R"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Hy-mo-vf0"/>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Hy-mo-vf0" firstAttribute="top" secondItem="MW1-Oq-ifZ" secondAttribute="bottom" constant="8" id="5Zy-Zx-GBD"/>
+                            <constraint firstItem="zpb-O4-btz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="5eT-gH-xdr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6Hy-mo-vf0" secondAttribute="bottom" constant="8" id="CLc-W7-ZK0"/>
+                            <constraint firstItem="MW1-Oq-ifZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="136" id="GEz-Eb-iSd"/>
+                            <constraint firstItem="zpb-O4-btz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="KZz-Be-AfO"/>
+                            <constraint firstItem="6Hy-mo-vf0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QEA-6m-mlp"/>
+                            <constraint firstItem="MW1-Oq-ifZ" firstAttribute="top" secondItem="zpb-O4-btz" secondAttribute="bottom" constant="8" id="WTE-mw-C7s"/>
+                            <constraint firstAttribute="trailing" secondItem="zpb-O4-btz" secondAttribute="trailing" constant="16" id="WnE-y2-17X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MW1-Oq-ifZ" secondAttribute="trailing" constant="137" id="hem-Y0-dkJ"/>
+                            <constraint firstAttribute="trailing" secondItem="6Hy-mo-vf0" secondAttribute="trailing" id="iwb-BV-v4c"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="6Hy-mo-vf0" id="DTb-U2-9qe"/>
+                        <outlet property="textBox" destination="zpb-O4-btz" id="apa-rg-HUo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
